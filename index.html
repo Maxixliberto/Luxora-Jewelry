@@ -5,119 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Luxora Jewelry</title>
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
     body {
-      background-color: #0d0d0d;
-      color: #fff;
-      line-height: 1.6;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #333;
     }
-
     header {
-      background: #111;
-      padding: 20px;
+      background: linear-gradient(to right, #fff, #f8f8f8);
+      padding: 2rem;
       text-align: center;
-      border-bottom: 1px solid #333;
+      border-bottom: 2px solid #eee;
     }
-
     header h1 {
       font-size: 2.5rem;
-      color: #d4af37;
-      letter-spacing: 3px;
+      color: #b8860b; /* gold accent */
+      margin: 0;
     }
-
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
     .hero {
-      background: url('https://images.unsplash.com/photo-1617034816810-10dc4943bc97?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      height: 80vh;
+      background: url('https://images.unsplash.com/photo-1600180758895-42c186be1a6e') center/cover no-repeat;
+      height: 50vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
       color: white;
+      text-shadow: 0px 2px 10px rgba(0,0,0,0.6);
     }
-
     .hero h2 {
-      font-size: 3rem;
-      background: rgba(0,0,0,0.6);
-      padding: 20px;
+      font-size: 2.5rem;
+      background: rgba(0,0,0,0.4);
+      padding: 10px 20px;
       border-radius: 10px;
-      color: #d4af37;
     }
-
     .products {
-      padding: 50px 10%;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      gap: 2rem;
+      padding: 3rem;
     }
-
     .product {
-      background: #1a1a1a;
+      background: #fff;
       border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       overflow: hidden;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
-
     .product:hover {
-      transform: translateY(-10px);
+      transform: translateY(-5px);
     }
-
     .product img {
       width: 100%;
-      height: 300px;
+      height: 250px;
       object-fit: cover;
     }
-
     .product h3 {
+      margin: 1rem;
       font-size: 1.2rem;
-      margin: 15px 0;
-      color: #fff;
+      color: #333;
     }
-
     .product p {
-      color: #d4af37;
-      margin-bottom: 15px;
-      font-weight: bold;
+      margin: 0 1rem 1rem;
+      color: #666;
     }
-
     .btn {
       display: inline-block;
-      padding: 10px 20px;
-      background: #d4af37;
-      color: #000;
+      margin: 0 1rem 1.5rem;
+      padding: 0.7rem 1.5rem;
+      background: #b8860b;
+      color: white;
       text-decoration: none;
-      border-radius: 25px;
+      border-radius: 8px;
       transition: background 0.3s;
     }
-
     .btn:hover {
-      background: #b7952b;
+      background: #daa520;
     }
-
     footer {
-      background: #111;
+      background: #f8f8f8;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      border-top: 1px solid #333;
-    }
-
-    footer p {
-      color: #aaa;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #eee;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Luxora Jewelry</h1>
+    <p>Modern Elegance • Luxury Accents</p>
   </header>
 
   <section class="hero">
@@ -126,29 +106,27 @@
 
   <section class="products">
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8e?auto=format&fit=crop&w=600&q=80" alt="Diamond Ring">
-      <h3>Diamond Ring</h3>
-      <p>$299 • Free Shipping</p>
+      <img src="https://images.unsplash.com/photo-1602524206313-38e3c205b5b5" alt="Necklace">
+      <h3>Gold-Plated Necklace</h3>
+      <p>$49.99</p>
       <a href="#" class="btn">Shop Now</a>
     </div>
-
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1591209627710-8d81a25f91b3?auto=format&fit=crop&w=600&q=80" alt="Gold Necklace">
-      <h3>Gold Necklace</h3>
-      <p>$499 • Free Shipping</p>
+      <img src="https://images.unsplash.com/photo-1622519407656-8f8e8c3a4c7a" alt="Ring">
+      <h3>Elegant Diamond Ring</h3>
+      <p>$79.99</p>
       <a href="#" class="btn">Shop Now</a>
     </div>
-
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1600718376740-bb3b3af0e5a6?auto=format&fit=crop&w=600&q=80" alt="Silver Earrings">
-      <h3>Silver Earrings</h3>
-      <p>$149 • Free Shipping</p>
+      <img src="https://images.unsplash.com/photo-1589216532372-c5b73c9b6c7c" alt="Bracelet">
+      <h3>Luxury Gold Bracelet</h3>
+      <p>$59.99</p>
       <a href="#" class="btn">Shop Now</a>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Luxora Jewelry | Follow us on Instagram & Facebook</p>
+    © 2025 Luxora Jewelry. All rights reserved.
   </footer>
 </body>
 </html>

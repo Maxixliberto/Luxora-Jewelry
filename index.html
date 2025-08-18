@@ -3,131 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crypto Jewelry Store</title>
-  <style>
-    body { font-family: Arial, sans-serif; background:#f9f9f9; margin:0; padding:0; color:#333; }
-    header { background:#fff; padding:20px; text-align:center; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
-    h1 { margin:0; font-size:2em; }
-    p.slogan { color:#666; margin-top:5px; }
-    .products { display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:20px; padding:20px; }
-    .product { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center; padding:15px; }
-    .product img { width:100%; height:auto; border-radius:10px; }
-    .product h2 { font-size:1.2em; margin:10px 0 5px; }
-    .product p { margin:5px 0; font-weight:bold; color:#222; }
-    .buy-btn { background:#0070f3; color:#fff; border:none; padding:10px 15px; border-radius:8px; cursor:pointer; margin-top:10px; }
-    .buy-btn:hover { background:#005bb5; }
-  </style>
+  <title>Jewelry Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <h1>Crypto Jewelry Store</h1>
-    <p class="slogan">One step ahead for crypto ✨ | We support cryptocurrency payments</p>
+<body class="bg-gray-50 text-gray-900">
+  <header class="bg-white shadow p-6 text-center">
+    <h1 class="text-3xl font-bold">Luxury Jewelry Collection</h1>
+    <p class="mt-2 text-lg text-gray-600">One step ahead with Crypto Payments (BTC, ETH, USDT)</p>
   </header>
 
-  <section class="products" id="product-list"></section>
+  <main class="max-w-7xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-  <script>
-    const PRODUCTS = [
-      {
-        name: "Connell Gold 2mm",
-        priceUSD: 74,
-        image: "https://cdn.shopify.com/s/files/1/0293/9277/products/connell-gold-2mm.jpg?v=1670000000",
-        sourceUrl: "https://uk.craftdlondon.com/products/connell-gold-2mm"
-      },
-      {
-        name: "Cuban Silver 4mm",
-        priceUSD: 120,
-        image: "https://cdn.shopify.com/s/files/1/0293/9277/products/cuban-silver-4mm.jpg?v=1670000000",
-        sourceUrl: "https://uk.craftdlondon.com/products/cuban-silver-4mm"
-      },
-      {
-        name: "Cuban Gold 6mm",
-        priceUSD: 126,
-        image: "https://cdn.shopify.com/s/files/1/0293/9277/products/cuban-gold-6mm.jpg?v=1670000000",
-        sourceUrl: "https://uk.craftdlondon.com/products/cuban-gold-6mm"
-      },
-      {
-        name: "Onyx Clover Stone Necklace Gold",
-        priceUSD: 155,
-        image: "https://cdn.shopify.com/s/files/1/0293/9277/products/onyx-clover-stone-necklace-gold.jpg?v=1670000000",
-        sourceUrl: "https://uk.craftdlondon.com/products/onyx-clover-stone-necklace-gold"
-      },
-      {
-        name: "Cuban Bracelet Gold 8mm",
-        priceUSD: 97,
-        image: "https://cdn.shopify.com/s/files/1/0293/9277/products/cuban-bracelet-gold-8mm.jpg?v=1670000000",
-        sourceUrl: "https://uk.craftdlondon.com/products/cuban-bracelet-gold-8mm"
-      },
-      {
-        name: "Connell Bracelet Gold 2mm",
-        priceUSD: 55,
-        image: "https://cdn.shopify.com/s/files/1/0293/9277/products/connell-bracelet-gold-2mm.jpg?v=1670000000",
-        sourceUrl: "https://uk.craftdlondon.com/products/connell-bracelet-gold-2mm"
-      },
-      {
-        name: "Wheat Bracelet Gold 3mm",
-        priceUSD: 97,
-        image: "https://cdn.shopify.com/s/files/1/0293/9277/products/wheat-bracelet-gold-3mm.jpg?v=1670000000",
-        sourceUrl: "https://uk.craftdlondon.com/products/wheat-bracelet-gold-3mm"
-      },
-      {
-        name: "Gemstone Bracelet Gold",
-        priceUSD: 242,
-        image: "https://cdn.shopify.com/s/files/1/0293/9277/products/gemstone-bracelet-gold.jpg?v=1670000000",
-        sourceUrl: "https://uk.craftdlondon.com/products/gemstone-bracelet-gold"
-      },
-      {
-        name: "Onyx Clover Stone Bracelet Gold",
-        priceUSD: 97,
-        image: "https://cdn.shopify.com/s/files/1/0293/9277/products/onyx-clover-stone-bracelet-gold.jpg?v=1670000000",
-        sourceUrl: "https://uk.craftdlondon.com/products/onyx-clover-stone-bracelet-gold"
-      },
-      {
-        name: "Malachite Clover Stone Bracelet Gold",
-        priceUSD: 155,
-        image: "https://cdn.shopify.com/s/files/1/0293/9277/products/malachite-clover-stone-bracelet-gold.jpg?v=1670000000",
-        sourceUrl: "https://uk.craftdlondon.com/products/malachite-clover-stone-bracelet-gold"
-      },
-      {
-        name: "Half Iced Cuban Bracelet Silver 8mm",
-        priceUSD: 72,
-        image: "https://cdn.shopify.com/s/files/1/0293/9277/products/half-iced-cuban-bracelet-silver-8mm.jpg?v=1670000000",
-        sourceUrl: "https://uk.craftdlondon.com/products/half-iced-cuban-bracelet-silver-8mm"
-      },
-      {
-        name: "Band Ring 2.0 Gold",
-        priceUSD: 116,
-        image: "https://cdn.shopify.com/s/files/1/0293/9277/products/band-ring-2-0-gold.jpg?v=1670000000",
-        sourceUrl: "https://uk.craftdlondon.com/products/band-ring-2-0-gold"
-      },
-      {
-        name: "Crucifix Silver",
-        priceUSD: 106,
-        image: "https://cdn.shopify.com/s/files/1/0293/9277/products/crucifix-silver.jpg?v=1670000000",
-        sourceUrl: "https://uk.craftdlondon.com/products/crucifix-silver"
-      },
-      {
-        name: "Toggle Chain Silver",
-        priceUSD: 106,
-        image: "https://cdn.shopify.com/s/files/1/0293/9277/products/toggle-chain-silver.jpg?v=1670000000",
-        sourceUrl: "https://uk.craftdlondon.com/products/toggle-chain-silver"
-      }
-    ];
+    <!-- Product 1 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <img src="https://uk.craftdlondon.com/cdn/shop/files/connell-g-1_1.jpg?v=1750693983&width=1200" alt="Connell Gold 2mm" class="rounded-xl">
+      <h2 class="mt-4 text-xl font-semibold">Connell Gold 2mm</h2>
+      <p class="text-gray-600">$53 USD</p>
+      <p class="text-red-600 font-medium mt-2">Message us on Instagram to purchase</p>
+    </div>
 
-    const productList = document.getElementById("product-list");
+    <!-- Product 2 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <img src="https://uk.craftdlondon.com/cdn/shop/files/cuban-4mm-s.png?v=1750694430&width=1200" alt="Cuban Silver 4mm" class="rounded-xl">
+      <h2 class="mt-4 text-xl font-semibold">Cuban Silver 4mm</h2>
+      <p class="text-gray-600">$86 USD</p>
+      <p class="text-red-600 font-medium mt-2">Message us on Instagram to purchase</p>
+    </div>
 
-    PRODUCTS.forEach(p => {
-      const card = document.createElement("div");
-      card.className = "product";
-      card.innerHTML = `
-        <img src="${p.image}" alt="${p.name}">
-        <h2>${p.name}</h2>
-        <p>$${p.priceUSD} USD</p>
-        <button class="buy-btn" onclick="alert('Msg @YourInstaHandle for purchasing this item')">Buy Now</button>
-        <p><a href="${p.sourceUrl}" target="_blank">View Original</a></p>
-      `;
-      productList.appendChild(card);
-    });
-  </script>
+    <!-- Product 3 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <img src="https://uk.craftdlondon.com/cdn/shop/files/6mm-cuban-chain-gold-styled-4.jpg?v=1754474758&width=1200" alt="Cuban Gold 6mm" class="rounded-xl">
+      <h2 class="mt-4 text-xl font-semibold">Cuban Gold 6mm</h2>
+      <p class="text-gray-600">$90 USD</p>
+      <p class="text-red-600 font-medium mt-2">Message us on Instagram to purchase</p>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <img src="https://uk.craftdlondon.com/cdn/shop/files/ProductPage_Square_9.png?v=1734348926&width=1000" alt="Onyx Clover Stone Necklace Gold" class="rounded-xl">
+      <h2 class="mt-4 text-xl font-semibold">Onyx Clover Stone Necklace Gold</h2>
+      <p class="text-gray-600">$111 USD</p>
+      <p class="text-red-600 font-medium mt-2">Message us on Instagram to purchase</p>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <img src="https://uk.craftdlondon.com/cdn/shop/files/cuban-bracelet-g-2.jpg?v=1715292970&width=1200" alt="Cuban Bracelet Gold 8mm" class="rounded-xl">
+      <h2 class="mt-4 text-xl font-semibold">Cuban Bracelet Gold 8mm</h2>
+      <p class="text-gray-600">$69 USD</p>
+      <p class="text-red-600 font-medium mt-2">Message us on Instagram to purchase</p>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <img src="https://uk.craftdlondon.com/cdn/shop/products/Craftd22.3.230110.jpg?v=1712594173&width=1200" alt="Connell Bracelet Gold 2mm" class="rounded-xl">
+      <h2 class="mt-4 text-xl font-semibold">Connell Bracelet Gold 2mm</h2>
+      <p class="text-gray-600">$39 USD</p>
+      <p class="text-red-600 font-medium mt-2">Message us on Instagram to purchase</p>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <img src="https://uk.craftdlondon.com/cdn/shop/files/3mm-wheat-bracelet-gold-styled.jpg?v=1754474329&width=1200" alt="Wheat Bracelet Gold 3mm" class="rounded-xl">
+      <h2 class="mt-4 text-xl font-semibold">Wheat Bracelet Gold 3mm</h2>
+      <p class="text-gray-600">$39 USD</p>
+      <p class="text-red-600 font-medium mt-2">Message us on Instagram to purchase</p>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <img src="https://uk.craftdlondon.com/cdn/shop/products/Craftd16.11.230070.jpg?v=1707671804&width=1200" alt="Gemstone Bracelet Gold" class="rounded-xl">
+      <h2 class="mt-4 text-xl font-semibold">Gemstone Bracelet Gold</h2>
+      <p class="text-gray-600">$173 USD</p>
+      <p class="text-red-600 font-medium mt-2">Message us on Instagram to purchase</p>
+    </div>
+
+    <!-- Product 9 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <img src="https://uk.craftdlondon.com/cdn/shop/files/Craftd30.4.240073.jpg?v=1717684672&width=1200" alt="Onyx Clover Stone Bracelet Gold" class="rounded-xl">
+      <h2 class="mt-4 text-xl font-semibold">Onyx Clover Stone Bracelet Gold</h2>
+      <p class="text-gray-600">$69 USD</p>
+      <p class="text-red-600 font-medium mt-2">Message us on Instagram to purchase</p>
+    </div>
+
+    <!-- Product 10 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <img src="https://uk.craftdlondon.com/cdn/shop/files/Craftd30.4.240069.jpg?v=1717684701&width=1200" alt="Malachite Clover Stone Bracelet Gold" class="rounded-xl">
+      <h2 class="mt-4 text-xl font-semibold">Malachite Clover Stone Bracelet Gold</h2>
+      <p class="text-gray-600">$69 USD</p>
+      <p class="text-red-600 font-medium mt-2">Message us on Instagram to purchase</p>
+    </div>
+
+    <!-- Product 11 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <img src="https://uk.craftdlondon.com/cdn/shop/products/ProductPageImage11_67.png?v=1707672091&width=1000" alt="Half Iced Cuban Bracelet Silver 8mm" class="rounded-xl">
+      <h2 class="mt-4 text-xl font-semibold">Half Iced Cuban Bracelet Silver 8mm</h2>
+      <p class="text-gray-600">$111 USD</p>
+      <p class="text-red-600 font-medium mt-2">Message us on Instagram to purchase</p>
+    </div>
+
+    <!-- Product 12 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <img src="https://uk.craftdlondon.com/cdn/shop/products/CRAFTD23.2.2143001.jpg?v=1752506255&width=1200" alt="Band Ring 2.0 Gold" class="rounded-xl">
+      <h2 class="mt-4 text-xl font-semibold">Band Ring 2.0 Gold</h2>
+      <p class="text-gray-600">$51 USD</p>
+      <p class="text-red-600 font-medium mt-2">Message us on Instagram to purchase</p>
+    </div>
+
+    <!-- Product 13 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <img src="https://uk.craftdlondon.com/cdn/shop/files/crucifix-s-1.jpg?v=1752742649&width=1200" alt="Crucifix Silver" class="rounded-xl">
+      <h2 class="mt-4 text-xl font-semibold">Crucifix Silver</h2>
+      <p class="text-gray-600">$83 USD</p>
+      <p class="text-red-600 font-medium mt-2">Message us on Instagram to purchase</p>
+    </div>
+
+    <!-- Product 14 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <img src="https://uk.craftdlondon.com/cdn/shop/files/toggle-milan-chain-silver-styled-1.jpg?v=1754487416&width=1200" alt="Toggle Chain Silver" class="rounded-xl">
+      <h2 class="mt-4 text-xl font-semibold">Toggle Chain Silver</h2>
+      <p class="text-gray-600">$76 USD</p>
+      <p class="text-red-600 font-medium mt-2">Message us on Instagram to purchase</p>
+    </div>
+
+  </main>
 </body>
 </html>

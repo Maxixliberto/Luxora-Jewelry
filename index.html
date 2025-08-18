@@ -1,132 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luxora Jewelry</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #fff;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(to right, #fff, #f8f8f8);
-      padding: 2rem;
-      text-align: center;
-      border-bottom: 2px solid #eee;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      color: #b8860b; /* gold accent */
-      margin: 0;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #555;
-    }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1600180758895-42c186be1a6e') center/cover no-repeat;
-      height: 50vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 0px 2px 10px rgba(0,0,0,0.6);
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      background: rgba(0,0,0,0.4);
-      padding: 10px 20px;
-      border-radius: 10px;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 3rem;
-    }
-    .product {
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-    .product:hover {
-      transform: translateY(-5px);
-    }
-    .product img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-    .product h3 {
-      margin: 1rem;
-      font-size: 1.2rem;
-      color: #333;
-    }
-    .product p {
-      margin: 0 1rem 1rem;
-      color: #666;
-    }
-    .btn {
-      display: inline-block;
-      margin: 0 1rem 1.5rem;
-      padding: 0.7rem 1.5rem;
-      background: #b8860b;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #daa520;
-    }
-    footer {
-      background: #f8f8f8;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #666;
-      border-top: 1px solid #eee;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Limited Edition Jewelry</title>
+<style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
+    .container { width: 90%; margin: auto; padding: 20px; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .product { background: #fff; padding: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); position: relative; }
+    .product img { width: 100%; border-radius: 10px; }
+    .product h3 { margin: 10px 0; font-size: 1.1em; }
+    .price { font-weight: bold; color: #b12704; }
+    .limited { position: absolute; top: 10px; right: 10px; background: #e74c3c; color: #fff; padding: 5px 10px; border-radius: 5px; font-size: 0.9em; }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Luxora Jewelry</h1>
-    <p>Modern Elegance • Luxury Accents</p>
-  </header>
+<div class="container">
+<h1>Limited Edition Jewelry Collection</h1>
+<div class="product-grid">
 
-  <section class="hero">
-    <h2>Elevate Your Elegance</h2>
-  </section>
+<!-- Product 1 -->
+<div class="product">
+    <div class="limited">Only 10 left</div>
+    <img src="https://www.bvwjewelers.com/cdn/shop/products/18k-white-gold-butterfly-diamond-and-sapphire-ring-bvw-jewelers-fine-engagement-rings-and-custom-designs-1.jpg" alt="18k White Gold Butterfly Ring">
+    <h3>18k White Gold Butterfly Diamond and Sapphire Ring</h3>
+    <p class="price">₹12,75,000</p>
+    <p>A stunning 18k white gold ring adorned with diamonds and sapphires, embodying elegance and craftsmanship.</p>
+</div>
 
-  <section class="products">
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1602524206313-38e3c205b5b5" alt="Necklace">
-      <h3>Gold-Plated Necklace</h3>
-      <p>$49.99</p>
-      <a href="#" class="btn">Shop Now</a>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1622519407656-8f8e8c3a4c7a" alt="Ring">
-      <h3>Elegant Diamond Ring</h3>
-      <p>$79.99</p>
-      <a href="#" class="btn">Shop Now</a>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1589216532372-c5b73c9b6c7c" alt="Bracelet">
-      <h3>Luxury Gold Bracelet</h3>
-      <p>$59.99</p>
-      <a href="#" class="btn">Shop Now</a>
-    </div>
-  </section>
+<!-- Product 2 -->
+<div class="product">
+    <div class="limited">Only 12 left</div>
+    <img src="https://www.bvwjewelers.com/cdn/shop/products/18k-rose-gold-butterfly-diamond-ring-bvw-jewelers-fine-engagement-rings-and-custom-designs-1.jpg" alt="18k Rose Gold Butterfly Ring">
+    <h3>18k Rose Gold Butterfly Diamond Ring</h3>
+    <p class="price">₹11,50,000</p>
+    <p>Elegant 18k rose gold ring featuring diamonds in a butterfly design, symbolizing transformation and beauty.</p>
+</div>
 
-  <footer>
-    © 2025 Luxora Jewelry. All rights reserved.
-  </footer>
+<!-- Product 3 -->
+<div class="product">
+    <div class="limited">Only 15 left</div>
+    <img src="https://www.bvwjewelers.com/cdn/shop/products/Emerald-Floral-Fashion-Ring-in-14k-White-Gold-B-Wolf.jpg" alt="Emerald Floral Ring">
+    <h3>Emerald Floral Fashion Ring in 14k White Gold</h3>
+    <p class="price">₹2,80,000</p>
+    <p>A 14k white gold ring featuring an emerald floral design, offering a touch of nature-inspired elegance.</p>
+</div>
+
+<!-- Product 4 -->
+<div class="product">
+    <div class="limited">Only 8 left</div>
+    <img src="https://www.bvwjewelers.com/cdn/shop/products/Ruby-Diamond-Scroll-Skull-Fashion-Ring-in-14k-White-Gold-B-Wolf.jpg" alt="Ruby & Diamond Skull Ring">
+    <h3>Ruby & Diamond Scroll Skull Fashion Ring in 14k White Gold</h3>
+    <p class="price">₹8,80,000</p>
+    <p>A bold 14k white gold ring combining ruby and diamond scrollwork with a skull motif, perfect for a statement piece.</p>
+</div>
+
+<!-- Product 5 -->
+<div class="product">
+    <div class="limited">Only 20 left</div>
+    <img src="https://www.bvwjewelers.com/cdn/shop/products/18k-rose-gold-and-silver-large-garnet-ring-bvw-jewelers-fine-engagement-rings-and-custom-designs-1.jpg" alt="Rose Gold & Silver Garnet Ring">
+    <h3>18k Rose Gold & Silver Large Garnet Ring</h3>
+    <p class="price">₹2,15,000</p>
+    <p>A striking 18k rose gold and silver ring featuring a large garnet stone, offering a rich color contrast.</p>
+</div>
+
+<!-- Product 6 -->
+<div class="product">
+    <div class="limited">Only 10 left</div>
+    <img src="https://www.bvwjewelers.com/cdn/shop/products/Criss-Cross-Three-Row-Diamond-Engagement-Ring-B-Wolf.jpg" alt="Criss Cross Diamond Ring">
+    <h3>Criss Cross Three Row Diamond Engagement Ring</h3>
+    <p class="price">₹4,00,000</p>
+    <p>A 14k white gold engagement ring featuring three rows of diamonds in a crisscross design, symbolizing unity.</p>
+</div>
+
+<!-- Product 7 -->
+<div class="product">
+    <div class="limited">Only 18 left</div>
+    <img src="https://www.bvwjewelers.com/cdn/shop/products/White-Gold-Rope-Diamond-and-Sapphire-Engagement-Ring-B-Wolf.jpg" alt="White Gold Rope Ring">
+    <h3>White Gold Rope Diamond and Sapphire Engagement Ring</h3>
+    <p class="price">₹1,12,000</p>
+    <p>A 14k white gold engagement ring featuring a rope design with diamonds and sapphires, offering a classic look.</p>
+</div>
+
+<!-- Product 8 -->
+<div class="product">
+    <div class="limited">Only 5 left</div>
+    <img src="https://www.bvwjewelers.com/cdn/shop/products/Ruby-Diamond-Rope-Engagement-Ring-in-14k-White-Gold-B-Wolf.jpg" alt="Ruby & Diamond Rope Ring">
+    <h3>Ruby & Diamond Rope Engagement Ring in 14k White Gold</h3>
+    <p class="price">₹13,25,000</p>
+    <p>A luxurious 14k white gold engagement ring featuring a rope design with rubies and diamonds, exuding sophistication.</p>
+</div>
+
+<!-- Product 9 -->
+<div class="product">
+    <div class="limited">Only 12 left</div>
+    <img src="https://www.bvwjewelers.com/cdn/shop/products/Floating-Diamond-Halo-Engagement-Ring-B-Wolf.jpg" alt="Floating Diamond Halo Ring">
+    <h3>Floating Diamond Halo Engagement Ring</h3>
+    <p class="price">₹2,99,500</p>
+    <p>A 14k white gold engagement ring featuring a floating diamond surrounded by a halo of smaller diamonds, creating a dazzling effect.</p>
+</div>
+
+<!-- Product 10 -->
+<div class="product">
+    <div class="limited">By Appointment</div>
+    <img src="https://www.bvwjewelers.com/cdn/shop/products/Diamond-Wrap-Engagement-Ring-B-Wolf.jpg" alt="Diamond Wrap Ring">
+    <h3>Diamond Wrap Engagement Ring - Custom Design by B. Wolf</h3>
+    <p class="price">Custom Pricing</p>
+    <p>A custom-designed diamond wrap engagement ring by B. Wolf, offering a personalized and unique piece.</p>
+</div>
+
+<!-- Product 11 -->
+<div class="product">
+    <div class="limited">Only 14 left</div>
+    <img src="https://www.bvwjewelers.com/cdn/shop/products/Diamond-and-Emerald-Bubble-Ring-in-14k-White-Gold-B-Wolf.jpg" alt="Diamond & Emerald Bubble Ring">
+    <h3>Diamond and Emerald Bubble Ring in 14k White Gold</h3>
+    <p class="price">₹5,20,000</p>
+    <p>A 14k white gold ring featuring diamonds and emeralds in a bubble design, offering a playful yet elegant look.</p>
+</div>
+
+<!-- Product 12 -->
+<div class="product">
+    <div class="limited">Only 25 left</div>
+    <img src="https://www.bvwjewelers.com/cdn/shop/products/Sterling-Silver-Large-Love-Knot-Stud-Earrings-on-Post-Back.jpg" alt="Love Knot Earrings">
+    <h3>Sterling Silver Large Love Knot Stud Earrings</h3>
+    <p class="price">₹4,700</p>
+    <p>Sterling silver stud earrings featuring a large love knot design, symbolizing eternal love.</p>
+</div>
+
+<!-- Product 13 -->
+<div class="product">
+    <div class="limited">Only 20 left</div>
+    <img src="https://www.bvwjewelers.com/cdn/shop/products/Sterling-Silver-Basketweave-Pattern-Hoop-Earrings-Midas-Chain.jpg" alt="Basketweave Hoop Earrings">
+    <h3>Sterling Silver Basketweave Pattern Hoop Earrings</h3>
+    <p class="price">₹9,600</p>
+    <p>Sterling silver hoop earrings featuring a basketweave pattern, offering a textured and stylish look.</p>
+</div>
+
+<!-- Product 14 -->
+<div class="product">
+    <div class="limited">Only 30 left</div>
+    <img src="https://www.bvwjewelers.com/cdn/shop/products/Sterling-Silver-8mm-Round-CZ-Stud-Earrings-on-Post-Back.jpg" alt="8mm CZ Stud Earrings">
+    <h3>Sterling Silver 8mm Round CZ Stud Earrings</h3>
+    <p class="price">₹9,100</p>
+    <p>Sterling silver stud earrings featuring 8mm round cubic zirconia stones, offering brilliance at an affordable price.</p>
+</div>
+
+<!-- Product 15 -->
+<div class="product">
+    <div class="limited">Only 50 left</div>
+    <img src="https://www.bvwjewelers.com/cdn/shop/products/Sterling-Silver-4mm-Round-CZ-Stud-Earrings-on-Post-Back.jpg" alt="4mm CZ Stud Earrings">
+    <h3>Sterling Silver 4mm Round CZ Stud Earrings</h3>
+    <p class="price">₹3,300</p>
+    <p>Sterling silver stud earrings featuring 4mm round cubic zirconia stones, perfect for everyday wear.</p>
+</div>
+
+</div>
+</div>
 </body>
 </html>

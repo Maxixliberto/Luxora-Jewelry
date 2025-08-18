@@ -1,182 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CryptoGem - Modern Jewelry Collection</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-<style>
-    body { font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; background: #f5f5f5; color: #333; }
-    header { background: #fff; padding: 30px 0; text-align: center; border-bottom: 1px solid #ddd; }
-    header h1 { margin: 0; font-size: 3em; font-weight: 600; }
-    nav { margin-top: 10px; }
-    nav a { margin: 0 15px; text-decoration: none; color: #555; font-weight: 500; }
-    .hero { background: #fff; padding: 60px 20px; text-align: center; }
-    .hero h2 { font-size: 2.5em; margin-bottom: 20px; color: #e67e22; }
-    .hero p { font-size: 1.2em; color: #666; max-width: 700px; margin: auto; }
-    .container { width: 90%; margin: auto; padding: 40px 0; }
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .product { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s; position: relative; }
-    .product:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
-    .product img { width: 100%; height: 300px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; }
-    .product h3 { font-size: 1.2em; margin-bottom: 10px; color: #222; }
-    .price { font-weight: 600; color: #e67e22; margin-bottom: 10px; }
-    .limited { position: absolute; top: 15px; right: 15px; background: #e74c3c; color: #fff; padding: 5px 10px; border-radius: 6px; font-size: 0.85em; font-weight: bold; }
-    .footer { background: #fff; text-align: center; padding: 30px 20px; border-top: 1px solid #ddd; color: #666; }
-    a { text-decoration: none; color: inherit; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luxora — Modern Jewelry</title>
+  <meta name="description" content="Modern, minimal jewelry. We support cryptocurrency — one step ahead of the future." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --bg-soft:#f6f7fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#6b7280;
+      --accent:#0ea5e9; /* sky-500 */
+      --accent-2:#22c55e; /* green-500 */
+      --ring: rgba(14,165,233,.35);
+      --shadow: 0 10px 25px rgba(2,6,23,.08);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif}
+    a{color:inherit}
+    .container{max-width:1200px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);border-bottom:1px solid #eef0f6}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px}
+    .badge{font-size:12px;padding:6px 10px;border-radius:999px;background:var(--bg-soft);color:var(--muted);border:1px solid #e8eaf2}
+
+    .hero{padding:58px 24px 24px}
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .headline{font-size:44px;line-height:1.05;margin:0 0 10px}
+    .sub{color:var(--muted);font-size:16px;max-width:46ch}
+    .cta{display:flex;gap:12px;margin-top:18px}
+    .btn{appearance:none;border:0;background:var(--text);color:#fff;padding:12px 18px;border-radius:14px;font-weight:600;box-shadow:var(--shadow);cursor:pointer}
+    .btn.secondary{background:var(--accent)}
+    .btn.ghost{background:transparent;color:var(--text);border:1px solid #e5e7eb}
+    .support-crypto{margin-top:18px;display:inline-flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid #e5e7eb;border-radius:999px;background:#fff;box-shadow:var(--shadow)}
+    .support-crypto .dot{width:8px;height:8px;border-radius:999px;background:var(--accent-2);box-shadow:0 0 0 4px rgba(34,197,94,.15)}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0 60px}
+    @media (max-width:1000px){.hero-inner{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}.headline{font-size:32px}}
+
+    .card{background:var(--card);border:1px solid #eef0f6;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+    .imgwrap{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--bg-soft)}
+    .imgwrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+    .card:hover .imgwrap img{transform:scale(1.05)}
+    .pill{position:absolute;left:12px;top:12px;background:#fff;border:1px solid #e5e7eb;color:var(--muted);font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px}
+    .content{padding:14px}
+    .title{font-weight:600;margin:2px 0 6px;font-size:16px}
+    .price{font-weight:700;font-size:18px}
+    .desc{color:var(--muted);font-size:13px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+    .actions{display:flex;gap:10px;margin-top:12px}
+    .buy{flex:1}
+
+    footer{border-top:1px solid #eef0f6;background:var(--bg-soft);padding:30px 24px;color:#475569}
+    .footgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
+    @media(max-width:900px){.footgrid{grid-template-columns:1fr}}
+    .small{font-size:12px;color:#6b7280}
+
+    /* modal */
+    .modal{position:fixed;inset:0;background:rgba(2,6,23,.45);display:none;align-items:center;justify-content:center;padding:20px}
+    .modal.show{display:flex}
+    .sheet{width:min(520px,96vw);background:#fff;border-radius:20px;box-shadow:var(--shadow)}
+    .sheet header{position:static;background:#fff;border:0}
+    .sheet .body{padding:20px}
+
+    .close{background:transparent;border:0;font-size:24px;cursor:pointer;color:#334155}
+
+    .toolbar{display:flex;gap:10px;align-items:center}
+    .toolbar input{padding:10px 12px;border-radius:12px;border:1px solid #e5e7eb;outline:none}
+
+    /* subtle focus ring */
+    :is(button,input,select,textarea):focus{outline:3px solid var(--ring);outline-offset:2px}
+
+    /* hidden admin toggle */
+    .admin{display:none}
+  </style>
 </head>
 <body>
-<header>
-    <h1>CryptoGem</h1>
-    <nav>
-        <a href="#collection">Collection</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+  <header>
+    <nav class="nav container">
+      <div class="brand">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l3.2 6.5L22 10l-5 4.9L18.4 21 12 17.7 5.6 21 7 14.9 2 10l6.8-.5L12 3z" stroke="#0f172a"/></svg>
+        <span>Luxora</span>
+        <span class="badge">Modern Jewelry</span>
+      </div>
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Search jewelry" />
+        <button class="btn ghost" id="exportCsv" title="Export product source links (admin)">Export CSV</button>
+      </div>
     </nav>
-</header>
-<section class="hero">
-    <h2>Luxury Jewelry, Limited Edition</h2>
-    <p>Explore CryptoGem’s curated selection of high-quality, limited edition jewelry pieces. Each product is crafted with precision and designed to impress.</p>
-</section>
-<div class="container" id="collection">
-<h2 style="text-align:center; margin-bottom:40px;">Featured Collection</h2>
-<div class="product-grid">
+  </header>
 
-<!-- All 15 Products -->
+  <section class="hero container">
+    <div class="hero-inner">
+      <div>
+        <h1 class="headline">Timeless pieces. Minimal design.</h1>
+        <p class="sub">Discover essentials crafted for every day. <strong>We support cryptocurrency — one step ahead of the future.</strong></p>
+        <div class="cta">
+          <a class="btn secondary" href="#catalog">Shop Collection</a>
+          <a class="btn ghost" href="#about">About</a>
+        </div>
+        <div class="support-crypto" aria-label="Crypto supported">
+          <span class="dot"></span>
+          <span>Crypto payments welcomed</span>
+        </div>
+      </div>
+      <div>
+        <div class="imgwrap" style="border-radius:20px;overflow:hidden;aspect-ratio:4/3">
+          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1600&auto=format&fit=crop" alt="Minimal jewelry hero" />
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Product 1 -->
-<div class="product">
-    <div class="limited">Only 10 left</div>
-    <img src="https://i.ibb.co/1mz7Rph/18k-white-gold-butterfly-ring.jpg" alt="18k White Gold Butterfly Ring">
-    <h3>18k White Gold Butterfly Diamond and Sapphire Ring</h3>
-    <p class="price">₹12,75,000</p>
-</div>
+  <main class="container" id="catalog">
+    <h2 style="margin:10px 0 6px">Featured Collection</h2>
+    <p class="small">15 curated pieces. Prices shown in USD. DM on Instagram to purchase.</p>
+    <div class="grid" id="grid"></div>
+  </main>
 
-<!-- Product 2 -->
-<div class="product">
-    <div class="limited">Only 12 left</div>
-    <img src="https://i.ibb.co/yVjC3vK/18k-rose-gold-butterfly-ring.jpg" alt="18k Rose Gold Butterfly Ring">
-    <h3>18k Rose Gold Butterfly Diamond Ring</h3>
-    <p class="price">₹11,50,000</p>
-</div>
+  <footer>
+    <div class="container footgrid">
+      <div>
+        <strong>Luxora</strong>
+        <p class="small">Modern jewelry store. We support cryptocurrency for seamless cross-border purchases.</p>
+      </div>
+      <div>
+        <strong>Support</strong>
+        <p class="small">Message us on Instagram <span id="handleFoot">@yourhandle</span> to purchase.</p>
+        <p class="small">Worldwide shipping. Simple returns.</p>
+      </div>
+      <div>
+        <strong>Legal</strong>
+        <p class="small">All product names and images are for demonstration. Replace with your sourced details.</p>
+      </div>
+    </div>
+  </footer>
 
-<!-- Product 3 -->
-<div class="product">
-    <div class="limited">Only 15 left</div>
-    <img src="https://i.ibb.co/ZV2Mn2x/Emerald-Floral-Ring.jpg" alt="Emerald Floral Ring">
-    <h3>Emerald Floral Fashion Ring in 14k White Gold</h3>
-    <p class="price">₹2,80,000</p>
-</div>
+  <!-- Modal -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="sheet">
+      <header class="nav" style="padding:10px 16px;border-bottom:1px solid #eef0f6">
+        <strong id="modalTitle">Contact to Purchase</strong>
+        <button class="close" id="modalClose" aria-label="Close">×</button>
+      </header>
+      <div class="body">
+        <p>Message us on Instagram <strong id="handleInline">@yourhandle</strong> to purchase this item.</p>
+        <div style="display:flex;gap:10px;margin-top:10px">
+          <a id="igLink" class="btn secondary" href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Open Instagram</a>
+          <button class="btn ghost" id="copyMsg">Copy Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<!-- Product 4 -->
-<div class="product">
-    <div class="limited">Only 8 left</div>
-    <img src="https://i.ibb.co/5sC4mJW/Ruby-Diamond-Skull-Ring.jpg" alt="Ruby & Diamond Skull Ring">
-    <h3>Ruby & Diamond Scroll Skull Fashion Ring in 14k White Gold</h3>
-    <p class="price">₹8,80,000</p>
-</div>
+  <script>
+    /**
+     * QUICK CONFIG
+     * -------------------------------------------------
+     * Set your Instagram handle below anytime.
+     */
+    const SITE = {
+      instagramHandle: '@yourhandle', // change later
+      instagramURL: function(){ return 'https://instagram.com/' + this.instagramHandle.replace('@',''); },
+      shippingCostUSD: 15,       // your typical shipping cost
+      marginPercent: 0.6,        // 60% markup over base (CraftLondon) price
+      roundTo99: true            // end prices with .99
+    };
 
-<!-- Product 5 -->
-<div class="product">
-    <div class="limited">Only 20 left</div>
-    <img src="https://i.ibb.co/0yN6yZQ/Rose-Gold-Silver-Garnet-Ring.jpg" alt="Rose Gold & Silver Garnet Ring">
-    <h3>18k Rose Gold & Silver Large Garnet Ring</h3>
-    <p class="price">₹2,15,000</p>
-</div>
+    /**
+     * DATA: 15 products
+     * -------------------------------------------------
+     * Replace each placeholder with CraftLondon details.
+     * Keep sourceUrl to fulfill orders. basePriceUSD is the original price; final price is auto-calculated.
+     * For images, paste full URLs (https://...). Ensure hotlinking is allowed or host images in your repo.
+     */
+    const PRODUCTS = [
+      // NOTE: The names/descriptions below are placeholders. Copy CraftLondon wording when you paste real items.
+      { sku:'CL-001', name:'Gold Vermeil Chain Necklace', basePriceUSD:80, image:'https://images.unsplash.com/photo-1516637090014-cb1ab0d08fc7?q=80&w=1200&auto=format&fit=crop', sourceUrl:'https://craftlondon.example/product/1', description:'A minimal chain necklace designed for everyday wear.' },
+      { sku:'CL-002', name:'Sterling Silver Signet Ring', basePriceUSD:70, image:'https://images.unsplash.com/photo-1599643477887-530eb83abc8e?q=80&w=1200&auto=format&fit=crop', sourceUrl:'https://craftlondon.example/product/2', description:'Classic signet silhouette with a polished finish.' },
+      { sku:'CL-003', name:'Pearl Drop Earrings', basePriceUSD:65, image:'https://images.unsplash.com/photo-1589739721211-174ea9b3462b?q=80&w=1200&auto=format&fit=crop', sourceUrl:'https://craftlondon.example/product/3', description:'Delicate freshwater pearls on gold-tone hooks.' },
+      { sku:'CL-004', name:'Minimal Hoop Earrings', basePriceUSD:55, image:'https://images.unsplash.com/photo-1599643477872-05630873ac38?q=80&w=1200&auto=format&fit=crop', sourceUrl:'https://craftlondon.example/product/4', description:'Sleek hoops — refined and versatile.' },
+      { sku:'CL-005', name:'Box Chain Bracelet', basePriceUSD:50, image:'https://images.unsplash.com/photo-1617038260897-3d8fe8e5403a?q=80&w=1200&auto=format&fit=crop', sourceUrl:'https://craftlondon.example/product/5', description:'Structured bracelet with a bold profile.' },
+      { sku:'CL-006', name:'Stackable Band Ring', basePriceUSD:40, image:'https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?q=80&w=1200&auto=format&fit=crop', sourceUrl:'https://craftlondon.example/product/6', description:'Slim band perfect for stacking.' },
+      { sku:'CL-007', name:'Herringbone Necklace', basePriceUSD:75, image:'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop', sourceUrl:'https://craftlondon.example/product/7', description:'Fluid herringbone that lays flat on the neckline.' },
+      { sku:'CL-008', name:'Cuban Link Chain', basePriceUSD:90, image:'https://images.unsplash.com/photo-1516571137133-1be29e37143a?q=80&w=1200&auto=format&fit=crop', sourceUrl:'https://craftlondon.example/product/8', description:'Statement chain with substantial links.' },
+      { sku:'CL-009', name:'Bar Pendant Necklace', basePriceUSD:60, image:'https://images.unsplash.com/photo-1582582621959-48a37b8b5b0e?q=80&w=1200&auto=format&fit=crop', sourceUrl:'https://craftlondon.example/product/9', description:'Minimal bar pendant on a fine chain.' },
+      { sku:'CL-010', name:'Beaded Bracelet', basePriceUSD:45, image:'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1200&auto=format&fit=crop', sourceUrl:'https://craftlondon.example/product/10', description:'Natural beads with subtle sheen.' },
+      { sku:'CL-011', name:'Curb Chain Bracelet', basePriceUSD:58, image:'https://images.unsplash.com/photo-1512755201-536dc9697475?q=80&w=1200&auto=format&fit=crop', sourceUrl:'https://craftlondon.example/product/11', description:'Refined curb chain with secure clasp.' },
+      { sku:'CL-012', name:'Medallion Pendant Necklace', basePriceUSD:85, image:'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1200&auto=format&fit=crop', sourceUrl:'https://craftlondon.example/product/12', description:'Vintage-inspired medallion with a brushed finish.' },
+      { sku:'CL-013', name:'Paperclip Chain Necklace', basePriceUSD:68, image:'https://images.unsplash.com/photo-1542393545-10f5cde2c810?q=80&w=1200&auto=format&fit=crop', sourceUrl:'https://craftlondon.example/product/13', description:'Elongated links for a modern look.' },
+      { sku:'CL-014', name:'Twist Rope Chain', basePriceUSD:62, image:'https://images.unsplash.com/photo-1518544801976-3e188ed9d52a?q=80&w=1200&auto=format&fit=crop', sourceUrl:'https://craftlondon.example/product/14', description:'Classic rope texture with high shine.' },
+      { sku:'CL-015', name:'Stone Signet Ring', basePriceUSD:95, image:'https://images.unsplash.com/photo-1551022372-52b6b48abb95?q=80&w=1200&auto=format&fit=crop', sourceUrl:'https://craftlondon.example/product/15', description:'Signet ring set with a polished stone.' },
+    ];
 
-<!-- Product 6 -->
-<div class="product">
-    <div class="limited">Only 11 left</div>
-    <img src="https://i.ibb.co/KwMsn3f/Yellow-Gold-Diamond-Ring.jpg" alt="Yellow Gold Diamond Ring">
-    <h3>18k Yellow Gold Diamond Solitaire Ring</h3>
-    <p class="price">₹9,50,000</p>
-</div>
+    // helpers
+    const formatUSD = (n)=> n.toLocaleString('en-US',{style:'currency',currency:'USD'});
+    const calcPrice = (base)=>{
+      const withMargin = base * (1 + SITE.marginPercent) + SITE.shippingCostUSD;
+      let p = Math.round(withMargin * 100) / 100;
+      if(SITE.roundTo99){ p = Math.floor(p) + 0.99; }
+      return p;
+    };
 
-<!-- Product 7 -->
-<div class="product">
-    <div class="limited">Only 9 left</div>
-    <img src="https://i.ibb.co/bvPqjPR/Pearl-Stud-Earrings.jpg" alt="Pearl Stud Earrings">
-    <h3>Freshwater Pearl Stud Earrings in 14k Gold</h3>
-    <p class="price">₹1,75,000</p>
-</div>
+    // render
+    const grid = document.getElementById('grid');
+    function render(list){
+      grid.innerHTML = '';
+      list.forEach(item=>{
+        const price = calcPrice(item.basePriceUSD);
+        const el = document.createElement('article');
+        el.className = 'card';
+        el.innerHTML = `
+          <div class="imgwrap">
+            <img loading="lazy" src="${item.image}" alt="${item.name}">
+            <span class="pill">In Stock</span>
+          </div>
+          <div class="content">
+            <div class="title">${item.name}</div>
+            <div class="desc">${item.description}</div>
+            <div class="price" aria-label="Price">${formatUSD(price)}</div>
+            <div class="actions">
+              <button class="btn buy" data-sku="${item.sku}">Buy via Instagram</button>
+              <a class="btn ghost" href="#" data-sku="${item.sku}" data-role="details">Details</a>
+            </div>
+          </div>`;
+        grid.appendChild(el);
+      })
+    }
 
-<!-- Product 8 -->
-<div class="product">
-    <div class="limited">Only 14 left</div>
-    <img src="https://i.ibb.co/mhKX8qY/Sapphire-Diamond-Ring.jpg" alt="Sapphire Diamond Ring">
-    <h3>14k White Gold Sapphire & Diamond Ring</h3>
-    <p class="price">₹4,60,000</p>
-</div>
+    // modal logic
+    const modal = document.getElementById('modal');
+    const modalClose = document.getElementById('modalClose');
+    const handleInline = document.getElementById('handleInline');
+    const handleFoot = document.getElementById('handleFoot');
+    const igLink = document.getElementById('igLink');
+    const copyBtn = document.getElementById('copyMsg');
+    function openModal(){ modal.classList.add('show'); }
+    function closeModal(){ modal.classList.remove('show'); }
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e)=>{ if(e.target===modal) closeModal(); });
 
-<!-- Product 9 -->
-<div class="product">
-    <div class="limited">Only 7 left</div>
-    <img src="https://i.ibb.co/xLdk9Tb/Ruby-Hoop-Earrings.jpg" alt="Ruby Hoop Earrings">
-    <h3>Ruby & Gold Hoop Earrings</h3>
-    <p class="price">₹3,20,000</p>
-</div>
+    function setHandle(){
+      handleInline.textContent = SITE.instagramHandle;
+      handleFoot.textContent = SITE.instagramHandle;
+      igLink.href = SITE.instagramURL();
+    }
 
-<!-- Product 10 -->
-<div class="product">
-    <div class="limited">Only 13 left</div>
-    <img src="https://i.ibb.co/Trj3D2b/Amethyst-Flower-Ring.jpg" alt="Amethyst Flower Ring">
-    <h3>Amethyst Floral Ring in 14k Gold</h3>
-    <p class="price">₹2,90,000</p>
-</div>
+    document.addEventListener('click', (e)=>{
+      const buyBtn = e.target.closest('button.buy');
+      if(buyBtn){
+        const sku = buyBtn.getAttribute('data-sku');
+        const p = PRODUCTS.find(x=>x.sku===sku);
+        if(p){
+          openModal();
+          copyBtn.onclick = () => {
+            const txt = `Hi! I want to buy: ${p.name} (SKU ${p.sku}).`;
+            navigator.clipboard.writeText(txt).then(()=>{
+              copyBtn.textContent = 'Copied!';
+              setTimeout(()=> copyBtn.textContent = 'Copy Message', 1200);
+            });
+          };
+        }
+      }
+      const details = e.target.closest('a[data-role="details"]');
+      if(details){
+        e.preventDefault();
+        const sku = details.getAttribute('data-sku');
+        const p = PRODUCTS.find(x=>x.sku===sku);
+        if(p){
+          alert(`${p.name}\n\nDescription: ${p.description}\nOur Price: ${formatUSD(calcPrice(p.basePriceUSD))}`);
+        }
+      }
+    });
 
-<!-- Product 11 -->
-<div class="product">
-    <div class="limited">Only 16 left</div>
-    <img src="https://i.ibb.co/7n59ZHg/Topaz-Drop-Necklace.jpg" alt="Topaz Drop Necklace">
-    <h3>Topaz Drop Pendant Necklace in 14k Gold</h3>
-    <p class="price">₹3,80,000</p>
-</div>
+    // search
+    const search = document.getElementById('search');
+    search.addEventListener('input', ()=>{
+      const q = search.value.toLowerCase().trim();
+      const filtered = PRODUCTS.filter(p=> (p.name+" "+p.description).toLowerCase().includes(q));
+      render(filtered);
+    });
 
-<!-- Product 12 -->
-<div class="product">
-    <div class="limited">Only 10 left</div>
-    <img src="https://i.ibb.co/D8kFf7y/Opal-Statement-Ring.jpg" alt="Opal Statement Ring">
-    <h3>Opal Statement Ring in Rose Gold</h3>
-    <p class="price">₹5,20,000</p>
-</div>
+    // export CSV of source links (admin helper)
+    document.getElementById('exportCsv').addEventListener('click', ()=>{
+      const header = 'sku,name,basePriceUSD,finalPriceUSD,sourceUrl';
+      const rows = PRODUCTS.map(p=>{
+        const finalPrice = calcPrice(p.basePriceUSD);
+        return [p.sku, '"'+p.name.replaceAll('"','""')+'"', p.basePriceUSD, finalPrice, p.sourceUrl].join(',');
+      });
+      const csv = [header,...rows].join('\n');
+      const blob = new Blob([csv], {type:'text/csv'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'product_sources.csv';
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    });
 
-<!-- Product 13 -->
-<div class="product">
-    <div class="limited">Only 12 left</div>
-    <img src="https://i.ibb.co/Sn0XwWQ/Diamond-Cuff-Bracelet.jpg" alt="Diamond Cuff Bracelet">
-    <h3>Diamond Cuff Bracelet in White Gold</h3>
-    <p class="price">₹6,50,000</p>
-</div>
-
-<!-- Product 14 -->
-<div class="product">
-    <div class="limited">Only 9 left</div>
-    <img src="https://i.ibb.co/ThCpr0k/Emerald-Drop-Earrings.jpg" alt="Emerald Drop Earrings">
-    <h3>Emerald Drop Earrings in 18k Gold</h3>
-    <p class="price">₹4,10,000</p>
-</div>
-
-<!-- Product 15 -->
-<div class="product">
-    <div class="limited">Only 10 left</div>
-    <img src="https://i.ibb.co/J7gYBpq/Yellow-Gold-Sapphire-Ring.jpg" alt="Yellow Gold Sapphire Ring">
-    <h3>18k Yellow Gold Sapphire Ring</h3>
-    <p class="price">₹5,90,000</p>
-</div>
-
-</div>
-</div>
-<section id="about" class="container">
-<h2 style="text-align:center; margin-bottom:20px;">About CryptoGem</h2>
-<p style="text-align:center; max-width:700px; margin:auto;">CryptoGem is committed to bringing high-quality, limited edition jewelry to collectors and enthusiasts worldwide. Each piece is designed with care and attention to detail, ensuring luxury and style in every item.</p>
-</section>
-<section id="contact" class="container">
-<h2 style="text-align:center; margin-bottom:20px;">Contact Us</h2>
-<p style="text-align:center; max-width:700px; margin:auto;">For inquiries, email us at <a href="mailto:support@cryptogem.com">support@cryptogem.com</a>. We also accept international orders and cryptocurrency payments.</p>
-</section>
-<div class="footer">
-<p>&copy; 2025 CryptoGem | Worldwide Shipping | Crypto Payments Accepted</p>
-</div>
+    // init
+    setHandle();
+    render(PRODUCTS);
+  </script>
 </body>
 </html>

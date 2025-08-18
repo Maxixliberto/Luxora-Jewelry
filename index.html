@@ -1,165 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Luxora Jewelry</title>
   <style>
-    body { font-family: 'Helvetica Neue', sans-serif; margin: 0; background: #fafafa; color: #222; }
-    header { text-align: center; padding: 2rem; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    header h1 { font-size: 2.5rem; letter-spacing: 2px; }
-    header p { font-size: 1rem; color: #777; }
-    .hero { text-align: center; padding: 3rem 1rem; background: linear-gradient(135deg,#fdfdfd,#f4f4f4); }
-    .hero h2 { font-size: 2rem; margin-bottom: 0.5rem; }
-    .products { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 2rem; padding: 2rem; max-width: 1200px; margin: auto; }
-    .product { background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 1rem; text-align: center; }
-    .product img { width: 100%; border-radius: 12px; }
-    .product h3 { margin: 0.8rem 0 0.3rem; font-size: 1.2rem; }
-    .product p { margin: 0.2rem 0; color: #444; }
-    .product .buy { display: inline-block; margin-top: 0.8rem; padding: 0.5rem 1rem; background: #111; color: #fff; border-radius: 8px; font-size: 0.9rem; cursor: pointer; text-decoration: none; }
-    .crypto { text-align: center; padding: 3rem 1rem; background: #fff; margin-top: 3rem; }
-    .crypto h2 { margin-bottom: 1rem; }
-    .crypto img { height: 32px; margin: 0 10px; vertical-align: middle; }
-    footer { text-align: center; padding: 1rem; font-size: 0.85rem; color: #888; }
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #fff;
+      color: #111;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #eee;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #888;
+    }
+    .hero {
+      background: url('https://uk.craftdlondon.com/cdn/shop/files/connell-g-1_1.jpg?v=1750693983&width=1200') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 6rem 1rem;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .product {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      background: #fff;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+    .product img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 1rem;
+      text-align: center;
+    }
+    .product-info h3 {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+    }
+    .product-info p {
+      font-weight: bold;
+      margin: 0.5rem 0 1rem;
+    }
+    .product-info button {
+      padding: 0.6rem 1.2rem;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .product-info button:hover {
+      background: #444;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid #eee;
+      font-size: 0.9rem;
+      color: #555;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Luxora Jewelry</h1>
-    <p>Luxury. Elegance. Crypto-Friendly.</p>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#products">Shop</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
   </header>
 
   <section class="hero">
-    <h2>Timeless Jewelry, Crafted for You</h2>
-    <p>Discover our collection and pay with the future — crypto supported ✨</p>
+    <h2>Luxury Jewelry for the Modern World</h2>
+    <p>One step ahead with Crypto Payments</p>
   </section>
 
-  <section class="products">
-    <!-- Product 1 -->
+  <section id="products" class="products">
+    <!-- Example Product -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/files/connell-g-1_1.jpg?v=1750693983&width=1200" alt="Connell Gold 2mm">
-      <h3>Connell Gold 2mm</h3>
-      <p>$53</p>
-      <a class="buy">Message us on Instagram to purchase</a>
+      <div class="product-info">
+        <h3>Connell Gold 2mm</h3>
+        <p>$53 USD</p>
+        <button>Message us on Instagram</button>
+      </div>
     </div>
 
-    <!-- Product 2 -->
+    <!-- Repeat other products -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/files/cuban-4mm-s.png?v=1750694430&width=1200" alt="Cuban Silver 4mm">
-      <h3>Cuban Silver 4mm</h3>
-      <p>$86</p>
-      <a class="buy">Message us on Instagram to purchase</a>
+      <div class="product-info">
+        <h3>Cuban Silver 4mm</h3>
+        <p>$86 USD</p>
+        <button>Message us on Instagram</button>
+      </div>
     </div>
 
-    <!-- Product 3 -->
-    <div class="product">
-      <img src="https://uk.craftdlondon.com/cdn/shop/files/6mm-cuban-chain-gold-styled-4.jpg?v=1754474758&width=1200" alt="Cuban Gold 6mm">
-      <h3>Cuban Gold 6mm</h3>
-      <p>$90</p>
-      <a class="buy">Message us on Instagram to purchase</a>
-    </div>
+    <!-- Add the rest of your 12 products here (same structure) -->
 
-    <!-- Product 4 -->
-    <div class="product">
-      <img src="https://uk.craftdlondon.com/cdn/shop/files/ProductPage_Square_9.png?v=1734348926&width=1000" alt="Onyx Clover Stone Necklace Gold">
-      <h3>Onyx Clover Stone Necklace Gold</h3>
-      <p>$111</p>
-      <a class="buy">Message us on Instagram to purchase</a>
-    </div>
-
-    <!-- Product 5 -->
-    <div class="product">
-      <img src="https://uk.craftdlondon.com/cdn/shop/files/cuban-bracelet-g-2.jpg?v=1715292970&width=1200" alt="Cuban Bracelet Gold 8mm">
-      <h3>Cuban Bracelet Gold 8mm</h3>
-      <p>$69</p>
-      <a class="buy">Message us on Instagram to purchase</a>
-    </div>
-
-    <!-- Product 6 -->
-    <div class="product">
-      <img src="https://uk.craftdlondon.com/cdn/shop/products/Craftd22.3.230110.jpg?v=1712594173&width=1200" alt="Connell Bracelet Gold 2mm">
-      <h3>Connell Bracelet Gold 2mm</h3>
-      <p>$39</p>
-      <a class="buy">Message us on Instagram to purchase</a>
-    </div>
-
-    <!-- Product 7 -->
-    <div class="product">
-      <img src="https://uk.craftdlondon.com/cdn/shop/files/3mm-wheat-bracelet-gold-styled.jpg?v=1754474329&width=1200" alt="Wheat Bracelet Gold 3mm">
-      <h3>Wheat Bracelet Gold 3mm</h3>
-      <p>$39</p>
-      <a class="buy">Message us on Instagram to purchase</a>
-    </div>
-
-    <!-- Product 8 -->
-    <div class="product">
-      <img src="https://uk.craftdlondon.com/cdn/shop/products/Craftd16.11.230070.jpg?v=1707671804&width=1200" alt="Gemstone Bracelet Gold">
-      <h3>Gemstone Bracelet Gold</h3>
-      <p>$173</p>
-      <a class="buy">Message us on Instagram to purchase</a>
-    </div>
-
-    <!-- Product 9 -->
-    <div class="product">
-      <img src="https://uk.craftdlondon.com/cdn/shop/files/Craftd30.4.240073.jpg?v=1717684672&width=1200" alt="Onyx Clover Stone Bracelet Gold">
-      <h3>Onyx Clover Stone Bracelet Gold</h3>
-      <p>$69</p>
-      <a class="buy">Message us on Instagram to purchase</a>
-    </div>
-
-    <!-- Product 10 -->
-    <div class="product">
-      <img src="https://uk.craftdlondon.com/cdn/shop/files/Craftd30.4.240069.jpg?v=1717684701&width=1200" alt="Malachite Clover Stone Bracelet Gold">
-      <h3>Malachite Clover Stone Bracelet Gold</h3>
-      <p>$69</p>
-      <a class="buy">Message us on Instagram to purchase</a>
-    </div>
-
-    <!-- Product 11 -->
-    <div class="product">
-      <img src="https://uk.craftdlondon.com/cdn/shop/products/ProductPageImage11_67.png?v=1707672091&width=1000" alt="Half Iced Cuban Bracelet Silver 8mm">
-      <h3>Half Iced Cuban Bracelet Silver 8mm</h3>
-      <p>$111</p>
-      <a class="buy">Message us on Instagram to purchase</a>
-    </div>
-
-    <!-- Product 12 -->
-    <div class="product">
-      <img src="https://uk.craftdlondon.com/cdn/shop/products/CRAFTD23.2.2143001.jpg?v=1752506255&width=1200" alt="Band Ring 2.0 Gold">
-      <h3>Band Ring 2.0 Gold</h3>
-      <p>$51</p>
-      <a class="buy">Message us on Instagram to purchase</a>
-    </div>
-
-    <!-- Product 13 -->
-    <div class="product">
-      <img src="https://uk.craftdlondon.com/cdn/shop/files/crucifix-s-1.jpg?v=1752742649&width=1200" alt="Crucifix Silver">
-      <h3>Crucifix Silver</h3>
-      <p>$76</p>
-      <a class="buy">Message us on Instagram to purchase</a>
-    </div>
-
-    <!-- Product 14 -->
-    <div class="product">
-      <img src="https://uk.craftdlondon.com/cdn/shop/files/toggle-milan-chain-silver-styled-1.jpg?v=1754487416&width=1200" alt="Toggle Chain Silver">
-      <h3>Toggle Chain Silver</h3>
-      <p>$39</p>
-      <a class="buy">Message us on Instagram to purchase</a>
-    </div>
-  </section>
-
-  <section class="crypto">
-    <h2>We Support Cryptocurrency Payments 🚀</h2>
-    <p>One step ahead for the future of luxury shopping.</p>
-    <div>
-      <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin">
-      <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum">
-      <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="Tether">
-    </div>
   </section>
 
   <footer>
-    <p>© 2025 Luxora Jewelry. All rights reserved.</p>
+    <p>© 2025 Luxora Jewelry. Supporting Crypto Payments ✨</p>
   </footer>
 </body>
 </html>

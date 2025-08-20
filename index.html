@@ -7,59 +7,60 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
+      background-color: #fdfdfd;
       margin: 0;
       padding: 0;
     }
     header {
-      text-align: center;
+      background-color: #000;
+      color: #fff;
       padding: 20px;
-      background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
     }
     header h1 {
       margin: 0;
-      font-size: 2em;
-      color: #333;
+      font-size: 28px;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 14px;
     }
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 20px;
       padding: 20px;
     }
     .product {
-      background: #fff;
+      border: 1px solid #ddd;
       border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      overflow: hidden;
+      padding: 15px;
+      background: #fff;
       text-align: center;
-      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
     .product img {
       max-width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
     }
-    .product h2 {
-      font-size: 1.2em;
-      margin: 10px 0;
+    .product-info h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
     }
-    .product p {
+    .product-info p {
+      margin: 0 0 10px;
       color: #555;
-      font-size: 1em;
     }
-    .product button {
-      margin-top: 10px;
-      background-color: black;
-      color: white;
+    .product-info a button {
+      background-color: #000;
+      color: #fff;
       border: none;
       padding: 10px 15px;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 1em;
-      transition: 0.3s;
+      transition: background 0.3s;
     }
-    .product button:hover {
+    .product-info a button:hover {
       background-color: #444;
     }
   </style>
@@ -67,151 +68,150 @@
 <body>
   <header>
     <h1>Luxora Jewelry</h1>
-    <p>Luxury Jewelry • A step forward to digital currencies • Premium quality</p>
+    <p>Luxury Jewelry ✨ | A Step Forward into Digital & Crypto Payments 💎</p>
   </header>
 
-  <section class="products">
-
-    <!-- 1 -->
+  <div class="products">
+    <!-- Product 1 -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/files/connell-g-2_1.jpg?v=1750693983&width=1200" alt="Connell Gold 2mm">
-      <h2>Connell Gold 2mm</h2>
-      <p>Elegant gold chain with a luxury finish.</p>
-      <a href="https://ig.me/m/luxorajewelry" target="_blank">
-        <button>Message us on Instagram</button>
-      </a>
+      <div class="product-info">
+        <h3>Connell Gold 2mm</h3>
+        <p>$53 USD</p>
+        <a href="https://ig.me/m/luxorajewelery" target="_blank"><button>Message us on Instagram</button></a>
+      </div>
     </div>
 
-    <!-- 2 -->
+    <!-- Product 2 -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/files/cuban-4mm-silver.png?v=1750694430&width=1200" alt="Cuban Silver 4mm">
-      <h2>Cuban Silver 4mm</h2>
-      <p>Classic Cuban silver chain.</p>
-      <a href="https://ig.me/m/luxorajewelry" target="_blank">
-        <button>Message us on Instagram</button>
-      </a>
+      <div class="product-info">
+        <h3>Cuban Silver 4mm</h3>
+        <p>$65 USD</p>
+        <a href="https://ig.me/m/luxorajewelery" target="_blank"><button>Message us on Instagram</button></a>
+      </div>
     </div>
 
-    <!-- 3 -->
+    <!-- Product 3 -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/files/6mm-cuban-chain-gold-styled-4.jpg?v=1754474758&width=1200" alt="Cuban Gold 6mm">
-      <h2>Cuban Gold 6mm</h2>
-      <p>Bold gold Cuban chain, 6mm thick.</p>
-      <a href="https://ig.me/m/luxorajewelry" target="_blank">
-        <button>Message us on Instagram</button>
-      </a>
+      <div class="product-info">
+        <h3>Cuban Gold 6mm</h3>
+        <p>$80 USD</p>
+        <a href="https://ig.me/m/luxorajewelery" target="_blank"><button>Message us on Instagram</button></a>
+      </div>
     </div>
 
-    <!-- 4 -->
+    <!-- Product 4 -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/files/ProductPage_Square_9.png?v=1734348926&width=1000" alt="Onyx Clover Stone Necklace Gold">
-      <h2>Onyx Clover Stone Necklace Gold</h2>
-      <p>Luxurious onyx clover stone necklace in gold.</p>
-      <a href="https://ig.me/m/luxorajewelry" target="_blank">
-        <button>Message us on Instagram</button>
-      </a>
+      <div class="product-info">
+        <h3>Onyx Clover Stone Necklace Gold</h3>
+        <p>$75 USD</p>
+        <a href="https://ig.me/m/luxorajewelery" target="_blank"><button>Message us on Instagram</button></a>
+      </div>
     </div>
 
-    <!-- 5 -->
+    <!-- Product 5 -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/files/cuban-bracelet-g-2.jpg?v=1715292970&width=1200" alt="Cuban Bracelet Gold 8mm">
-      <h2>Cuban Bracelet Gold 8mm</h2>
-      <p>Thick and stylish Cuban bracelet in gold.</p>
-      <a href="https://ig.me/m/luxorajewelry" target="_blank">
-        <button>Message us on Instagram</button>
-      </a>
+      <div class="product-info">
+        <h3>Cuban Bracelet Gold 8mm</h3>
+        <p>$70 USD</p>
+        <a href="https://ig.me/m/luxorajewelery" target="_blank"><button>Message us on Instagram</button></a>
+      </div>
     </div>
 
-    <!-- 6 -->
+    <!-- Product 6 -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/products/Craftd22.3.230111.jpg?v=1712594173&width=1200" alt="Connell Bracelet Gold 2mm">
-      <h2>Connell Bracelet Gold 2mm</h2>
-      <p>Delicate gold bracelet with Connell design.</p>
-      <a href="https://ig.me/m/luxorajewelry" target="_blank">
-        <button>Message us on Instagram</button>
-      </a>
+      <div class="product-info">
+        <h3>Connell Bracelet Gold 2mm</h3>
+        <p>$55 USD</p>
+        <a href="https://ig.me/m/luxorajewelery" target="_blank"><button>Message us on Instagram</button></a>
+      </div>
     </div>
 
-    <!-- 7 -->
+    <!-- Product 7 -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/files/3mm-wheat-bracelet-gold-styled.jpg?v=1754474329&width=1200" alt="Wheat Bracelet Gold 3mm">
-      <h2>Wheat Bracelet Gold 3mm</h2>
-      <p>Beautifully designed wheat-style bracelet.</p>
-      <a href="https://ig.me/m/luxorajewelry" target="_blank">
-        <button>Message us on Instagram</button>
-      </a>
+      <div class="product-info">
+        <h3>Wheat Bracelet Gold 3mm</h3>
+        <p>$60 USD</p>
+        <a href="https://ig.me/m/luxorajewelery" target="_blank"><button>Message us on Instagram</button></a>
+      </div>
     </div>
 
-    <!-- 8 -->
+    <!-- Product 8 -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/products/Craftd16.11.230074.jpg?v=1707671804&width=1200" alt="Gemstone Bracelet Gold">
-      <h2>Gemstone Bracelet Gold</h2>
-      <p>Gold bracelet with fine gemstone detailing.</p>
-      <a href="https://ig.me/m/luxorajewelry" target="_blank">
-        <button>Message us on Instagram</button>
-      </a>
+      <div class="product-info">
+        <h3>Gemstone Bracelet Gold</h3>
+        <p>$68 USD</p>
+        <a href="https://ig.me/m/luxorajewelery" target="_blank"><button>Message us on Instagram</button></a>
+      </div>
     </div>
 
-    <!-- 9 -->
+    <!-- Product 9 -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/files/onyx-clover-stone-bracelet-gold-styled.jpg?v=1753783268&width=1200" alt="Onyx Clover Stone Bracelet Gold">
-      <h2>Onyx Clover Stone Bracelet Gold</h2>
-      <p>Luxury onyx clover bracelet in gold finish.</p>
-      <a href="https://ig.me/m/luxorajewelry" target="_blank">
-        <button>Message us on Instagram</button>
-      </a>
+      <div class="product-info">
+        <h3>Onyx Clover Stone Bracelet Gold</h3>
+        <p>$72 USD</p>
+        <a href="https://ig.me/m/luxorajewelery" target="_blank"><button>Message us on Instagram</button></a>
+      </div>
     </div>
 
-    <!-- 10 -->
+    <!-- Product 10 -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/files/Craftd30.4.240069.jpg?v=1717684701&width=1200" alt="Malachite Clover Stone Bracelet Gold">
-      <h2>Malachite Clover Stone Bracelet Gold</h2>
-      <p>Unique malachite clover stone bracelet.</p>
-      <a href="https://ig.me/m/luxorajewelry" target="_blank">
-        <button>Message us on Instagram</button>
-      </a>
+      <div class="product-info">
+        <h3>Malachite Clover Stone Bracelet Gold</h3>
+        <p>$74 USD</p>
+        <a href="https://ig.me/m/luxorajewelery" target="_blank"><button>Message us on Instagram</button></a>
+      </div>
     </div>
 
-    <!-- 11 -->
+    <!-- Product 11 -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/products/ProductPageImage11_67.png?v=1707672091&width=1000" alt="Half Iced Cuban Bracelet Silver 8mm">
-      <h2>Half Iced Cuban Bracelet Silver 8mm</h2>
-      <p>Silver Cuban bracelet with half iced design.</p>
-      <a href="https://ig.me/m/luxorajewelry" target="_blank">
-        <button>Message us on Instagram</button>
-      </a>
+      <div class="product-info">
+        <h3>Half Iced Cuban Bracelet Silver 8mm</h3>
+        <p>$95 USD</p>
+        <a href="https://ig.me/m/luxorajewelery" target="_blank"><button>Message us on Instagram</button></a>
+      </div>
     </div>
 
-    <!-- 12 -->
+    <!-- Product 12 -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/files/band-2-ring-gold.jpg?v=1752506255&width=1200" alt="Band Ring 2.0 Gold">
-      <h2>Band Ring 2.0 Gold</h2>
-      <p>Stylish gold band ring 2.0 edition.</p>
-      <a href="https://ig.me/m/luxorajewelry" target="_blank">
-        <button>Message us on Instagram</button>
-      </a>
+      <div class="product-info">
+        <h3>Band Ring 2.0 Gold</h3>
+        <p>$50 USD</p>
+        <a href="https://ig.me/m/luxorajewelery" target="_blank"><button>Message us on Instagram</button></a>
+      </div>
     </div>
 
-    <!-- 13 -->
+    <!-- Product 13 -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/files/crucifix-s-1.jpg?v=1752742649&width=1200" alt="Crucifix Silver">
-      <h2>Crucifix Silver</h2>
-      <p>Minimalist crucifix pendant in silver.</p>
-      <a href="https://ig.me/m/luxorajewelry" target="_blank">
-        <button>Message us on Instagram</button>
-      </a>
+      <div class="product-info">
+        <h3>Crucifix Silver</h3>
+        <p>$58 USD</p>
+        <a href="https://ig.me/m/luxorajewelery" target="_blank"><button>Message us on Instagram</button></a>
+      </div>
     </div>
 
-    <!-- 14 -->
+    <!-- Product 14 -->
     <div class="product">
       <img src="https://uk.craftdlondon.com/cdn/shop/files/toggle-milan-chain-silver-styled-5.jpg?v=1754470697&width=1200" alt="Toggle Chain Silver">
-      <h2>Toggle Chain Silver</h2>
-      <p>Trendy toggle chain in premium silver.</p>
-      <a href="https://ig.me/m/luxorajewelry" target="_blank">
-        <button>Message us on Instagram</button>
-      </a>
+      <div class="product-info">
+        <h3>Toggle Chain Silver</h3>
+        <p>$85 USD</p>
+        <a href="https://ig.me/m/luxorajewelery" target="_blank"><button>Message us on Instagram</button></a>
+      </div>
     </div>
 
-  </section>
+  </div>
 </body>
 </html>
